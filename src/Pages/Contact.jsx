@@ -13,7 +13,7 @@ import Footer from "./Footer";
 import "./Contact.css";
 import emailjs from "emailjs-com";
 import { useState } from "react";
-import { ToastContainer } from "react-bootstrap";
+import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 
 // emailjs.init("LCZ6GXJP544pbbC71");
@@ -37,26 +37,44 @@ const Contact = () => {
   const handleSubmit = (e) => {
     console.log("Submitted");
     e.preventDefault();
-    toast.success("Message sent successfully!");
 
-    // emailjs
-    //   .send(
-    //     "service_9censyo",
-    //     "template_pwadq3k",
-    //     formData,
-    //     "LCZ6GXJP544pbbC71"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //       toast.success("Message sent successfully!");
-    //       setFormData({ name: "", email: "", subject: "", message: "" });
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //       toast.error("Failed to send message.");
-    //     }
-    //   );
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      // Display error message if any field is empty
+      toast.error("Please fill in all fields.");
+      return; // Exit early if any field is empty
+    }
+
+    // Email validation using regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      // Display error message if email is not valid
+      toast.error("Please enter a valid email address.");
+      return; // Exit early if email is not valid
+    }
+
+    emailjs
+      .send(
+        "service_9censyo",
+        "template_pwadq3k",
+        formData,
+        "LCZ6GXJP544pbbC71"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Failed to send message.");
+        }
+      );
   };
 
   return (
@@ -181,7 +199,7 @@ const Contact = () => {
                   <TextField
                     id="message"
                     name="message"
-                    label="Describe Project"
+                    label="Describe Your Message"
                     variant="filled"
                     fullWidth
                     sx={{ background: "white", color: "black" }}
@@ -195,9 +213,8 @@ const Contact = () => {
                   <Button
                     type="submit"
                     variant="contained"
-                    endIcon={<SendIcon />}
+                    endIcon={<SendIcon sx={{ color: "white" }} />}
                     sx={{
-                      color: "white",
                       backgroundColor: "crimson",
                       fontSize: "1.4rem",
                     }}

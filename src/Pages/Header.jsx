@@ -13,7 +13,7 @@ const Header = () => {
           <AppBar position="static" sx={{ backgroundColor: "black" }}>
             <Toolbar>
               <div className="logo">
-                <NavLink>
+                <NavLink to="/about">
                   <span style={{ color: "white" }}>Port</span>
                   <span style={{ color: "crimson" }}>folio.</span>
                 </NavLink>
