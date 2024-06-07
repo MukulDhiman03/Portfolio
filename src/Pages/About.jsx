@@ -49,16 +49,16 @@ const About = () => {
           id="image"
         >
           <div className="col-md-6 col-sm-12 text-start ">
-            <p style={{ fontSize: "3.5rem", fontWeight: "bolder" }}>
+            <p style={{ fontSize: "3rem", fontWeight: "bolder" }}>
               Nice To Meet You{" "}
               <WavingHandIcon fontSize="large" sx={{ color: "yellow" }} />
             </p>
-            <h1 style={{ fontSize: "3.5rem", fontWeight: "bolder" }}>
+            <h1 style={{ fontSize: "3rem", fontWeight: "bolder" }}>
               I'm Mukul Dhiman,
             </h1>
             <h1
               className="role"
-              style={{ fontSize: "3.5rem", fontWeight: "bolder" }}
+              style={{ fontSize: "3rem", fontWeight: "bolder" }}
             >
               And I'm a{" "}
               <span
@@ -75,7 +75,7 @@ const About = () => {
               React Js.
             </p>
             <div className="row">
-              <div className="col-md-3 mt-2">
+              <div className="col-md-4 mt-2">
                 <Button
                   variant="contained"
                   endIcon={<SendIcon />}
