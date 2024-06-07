@@ -1,0 +1,10 @@
+span {
+    color: crimson;
+}
+
+
+@media (max-width: 600px) {
+    .footer {
+        font-size: 0.8rem;
+    }
+}
