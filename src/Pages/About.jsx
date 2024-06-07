@@ -6,6 +6,8 @@ import SendIcon from "@mui/icons-material/Send";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
 import DownloadIcon from "@mui/icons-material/Download";
 import "./About.css";
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const myData = [
@@ -79,21 +81,32 @@ const About = () => {
                     fontSize: "1rem",
                   }}
                 >
-                  Looking To Hire
+                  <Link
+                    to="/contact"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    Looking To Hire
+                  </Link>
                 </Button>
               </div>
 
               <div className="col-md-3 mt-2">
                 <Button
                   variant="contained"
-                  endIcon={<DownloadIcon />}
+                  endIcon={<DownloadIcon sx={{ color: "white" }} />}
                   sx={{
                     color: "white",
                     backgroundColor: "crimson",
                     fontSize: "1rem",
                   }}
                 >
-                  My Resume
+                  <a
+                    href="../../public/Mukul_Dhiman_Resume.pdf"
+                    download
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    My Resume
+                  </a>
                 </Button>
               </div>
             </div>

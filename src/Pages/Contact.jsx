@@ -10,13 +10,14 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Footer from "./Footer";
+import "./Contact.css";
 
 const Contact = () => {
   return (
     <>
       <div className="container-fluid mt-5">
         <div className="row text-center">
-          <h1>Contact Me</h1>
+          <p className="contact_page_content_heading">Contact Me</p>
           <h2 style={{ color: "crimson" }}>
             <span style={{ color: "white" }}>--</span>
             get in touch
@@ -89,7 +90,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-md-5 mt-2">
-            <div>
+            <div className="below_section">
               <h3>Message Me</h3>
             </div>
             <div className="row">
@@ -133,15 +134,15 @@ const Contact = () => {
                 />
               </div>
             </div>
-            <div className="row mt-4">
-              <div className="col-md-12">
+            <div className="row my-2">
+              <div className="col-md-12 ">
                 <Button
                   variant="contained"
                   endIcon={<SendIcon />}
                   sx={{
                     color: "white",
                     backgroundColor: "crimson",
-                    fontSize: "1.5rem",
+                    fontSize: "1.4rem",
                   }}
                 >
                   Send Message
@@ -150,10 +151,10 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <div>
+          <Footer />
+        </div>
       </div>
-      {/* <div className="mt-2">
-        <Footer />
-      </div> */}
     </>
   );
 };

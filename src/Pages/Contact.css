@@ -1,0 +1,15 @@
+.contact_page_content_heading {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+@media (max-width: 600px) {
+    .contact_page_content_heading {
+        font-size: 2rem;
+    }
+
+    .below_section {
+        margin-top: 50px;
+    }
+
+}
