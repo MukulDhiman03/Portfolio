@@ -1,0 +1,19 @@
+.skill_page_heading_content {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+
+@media (max-width: 600px) {
+    .skill_page_heading_content {
+        font-size: 1.6rem;
+    }
+}
+
+.skill_page_heading_content {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .skill_page_para_content {}
+}

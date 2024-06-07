@@ -13,6 +13,7 @@ import POSTMAN from "../img/postman.png";
 import docker from "../img/docker.png";
 import Certificates from "./Certificates";
 import Footer from "./Footer";
+import "./Skills.css";
 
 const Skills = () => {
   return (
@@ -28,10 +29,10 @@ const Skills = () => {
         </div>
         <div className="row ">
           <div className="col-md-6 col-sm-12 p-4">
-            <h3 style={{ fontSize: "2.5rem", fontWeight: "bolder" }}>
+            <h3 className="skill_page_heading_content">
               My creative skills & experiences
             </h3>
-            <p style={{ fontSize: "1.5rem" }}>
+            <p className="skill_page_para_content">
               I am a Frontend Developer with a passion for learning and can work
               with estimation of future tasks and client feedback. I am
               highly-motivated, result oriented, self-driven, hard-working, fast

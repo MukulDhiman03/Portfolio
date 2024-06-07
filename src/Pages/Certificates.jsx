@@ -15,7 +15,7 @@ const Docker =
 const Certificates = () => {
   return (
     <div className="accordion-root">
-      <p style={{ fontSize: "2.5rem", fontWeight: "bolder" }}>Certifications</p>
+      <p className="certificate_page_heading_content">Certifications</p>
       <Accordion sx={{ backgroundColor: "black", color: "white" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}

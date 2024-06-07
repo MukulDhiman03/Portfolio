@@ -5,12 +5,12 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
 import DownloadIcon from "@mui/icons-material/Download";
-import Footer from "./Footer";
+import "./About.css";
 
 const About = () => {
   const myData = [
     "Front End Developer",
-    "React Developer",
+    "React JS Developer",
     "JavaScript Developer",
     "Python Developer",
   ];
@@ -45,21 +45,15 @@ const About = () => {
       <div className="container-fluid" id="about">
         <div
           className="row d-flex justify-content-around align-items-center"
-          // style={{ border: "2px solid red" }}
           id="image"
         >
           <div className="col-md-6 col-sm-12 text-start ">
-            <p style={{ fontSize: "3rem", fontWeight: "bolder" }}>
+            <p className="about_page_content_heading">
               Nice To Meet You{" "}
               <WavingHandIcon fontSize="large" sx={{ color: "yellow" }} />
             </p>
-            <h1 style={{ fontSize: "3rem", fontWeight: "bolder" }}>
-              I'm Mukul Dhiman,
-            </h1>
-            <h1
-              className="role"
-              style={{ fontSize: "3rem", fontWeight: "bolder" }}
-            >
+            <p className="about_page_content_heading">I'm Mukul Dhiman,</p>
+            <p className="role about_page_content_heading">
               And I'm a{" "}
               <span
                 style={{ color: "crimson", borderBottom: "2px solid crimson" }}
@@ -67,8 +61,8 @@ const About = () => {
                 {myData[currentRoleIndex]}
               </span>
               <span style={{ color: "crimson" }}> |</span>
-            </h1>
-            <p style={{ fontSize: "2rem" }}>
+            </p>
+            <p className="about_page_content_para">
               I'm dedicated Front-End Developer with a year of professional
               experience. My expertise lies in translating complex design
               concepts into seamless user experiences using technologies like
