@@ -15,7 +15,8 @@ const Docker =
 const Certificates = () => {
   return (
     <div className="accordion-root">
-      <Accordion>
+      <p style={{ fontSize: "2.5rem", fontWeight: "bolder" }}>Certifications</p>
+      <Accordion sx={{ backgroundColor: "black", color: "white" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
           aria-controls="panel1-content"
@@ -36,7 +37,7 @@ const Certificates = () => {
           </span>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion sx={{ backgroundColor: "black", color: "white" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
           aria-controls="panel2-content"
@@ -57,7 +58,7 @@ const Certificates = () => {
           </span>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion sx={{ backgroundColor: "black", color: "white" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
           aria-controls="panel3-content"

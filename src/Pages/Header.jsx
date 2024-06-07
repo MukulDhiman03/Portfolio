@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,21 +13,24 @@ const Header = () => {
           <AppBar position="static" sx={{ backgroundColor: "black" }}>
             <Toolbar>
               <div className="logo">
-                <Link>
+                <NavLink>
                   <span style={{ color: "white" }}>Port</span>
                   <span style={{ color: "crimson" }}>folio.</span>
-                </Link>
+                </NavLink>
               </div>
-              <div className="nav-items">
+              <div
+                className="nav-items d-flex justify-content-end"
+                style={{ width: "70vw" }}
+              >
                 <Typography
                   variant="h5"
                   component="div"
                   p={2}
                   sx={{ fontWeight: "bolder" }}
                 >
-                  <Link to="/about" className="link">
+                  <NavLink to="/about" className="link">
                     About
-                  </Link>
+                  </NavLink>
                 </Typography>
                 <Typography
                   variant="h5"
@@ -35,9 +38,9 @@ const Header = () => {
                   p={2}
                   sx={{ fontWeight: "bolder" }}
                 >
-                  <Link to="/skills" className="link">
+                  <NavLink to="/skills" className="link">
                     Skills
-                  </Link>
+                  </NavLink>
                 </Typography>
                 <Typography
                   variant="h5"
@@ -45,9 +48,9 @@ const Header = () => {
                   p={2}
                   sx={{ fontWeight: "bolder" }}
                 >
-                  <Link to="/projects" className="link">
+                  <NavLink to="/projects" className="link">
                     Projects
-                  </Link>
+                  </NavLink>
                 </Typography>
                 <Typography
                   variant="h5"
@@ -55,9 +58,9 @@ const Header = () => {
                   p={2}
                   sx={{ fontWeight: "bolder" }}
                 >
-                  <Link to="/contact" className="link">
+                  <NavLink to="/contact" className="link">
                     Contact
-                  </Link>
+                  </NavLink>
                 </Typography>
               </div>
             </Toolbar>
