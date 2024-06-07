@@ -8,6 +8,8 @@ import DownloadIcon from "@mui/icons-material/Download";
 import "./About.css";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const About = () => {
   const myData = [
@@ -18,6 +20,10 @@ const About = () => {
   ];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  const handleDownload = () => {
+    toast.success("Download started successfully!");
+  };
 
   // to handle my data after every 1 second
   useEffect(() => {
@@ -101,13 +107,15 @@ const About = () => {
                   }}
                 >
                   <a
-                    href="../../public/Mukul_Dhiman_Resume.pdf"
+                    href="../Mukul_Dhiman_Resume.pdf"
                     download
+                    onClick={handleDownload}
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     My Resume
                   </a>
                 </Button>
+                <ToastContainer />
               </div>
             </div>
           </div>

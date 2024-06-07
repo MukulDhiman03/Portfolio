@@ -11,8 +11,54 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Footer from "./Footer";
 import "./Contact.css";
+import emailjs from "emailjs-com";
+import { useState } from "react";
+import { ToastContainer } from "react-bootstrap";
+import { toast } from "react-toastify";
+
+// emailjs.init("LCZ6GXJP544pbbC71");
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    console.log("Submitted");
+    e.preventDefault();
+    toast.success("Message sent successfully!");
+
+    // emailjs
+    //   .send(
+    //     "service_9censyo",
+    //     "template_pwadq3k",
+    //     formData,
+    //     "LCZ6GXJP544pbbC71"
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //       toast.success("Message sent successfully!");
+    //       setFormData({ name: "", email: "", subject: "", message: "" });
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //       toast.error("Failed to send message.");
+    //     }
+    //   );
+  };
+
   return (
     <>
       <div className="container-fluid mt-5">
@@ -93,62 +139,75 @@ const Contact = () => {
             <div className="below_section">
               <h3>Message Me</h3>
             </div>
-            <div className="row">
-              <div className="col-md-6 mt-3">
-                <TextField
-                  id="filled-basic"
-                  label="Name"
-                  variant="filled"
-                  fullWidth
-                  sx={{ background: "white" }}
-                />
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-md-6 mt-3">
+                  <TextField
+                    id="name"
+                    name="name"
+                    label="Name"
+                    variant="filled"
+                    fullWidth
+                    sx={{ background: "white" }}
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="col-md-6 mt-3">
+                  <TextField
+                    id="email"
+                    name="email"
+                    label="Email"
+                    variant="filled"
+                    fullWidth
+                    sx={{ background: "white", color: "black" }}
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="col-12 mt-3">
+                  <TextField
+                    id="subject"
+                    name="subject"
+                    label="Subject"
+                    variant="filled"
+                    fullWidth
+                    sx={{ background: "white", color: "black" }}
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="col-12 mt-3">
+                  <TextField
+                    id="message"
+                    name="message"
+                    label="Describe Project"
+                    variant="filled"
+                    fullWidth
+                    sx={{ background: "white", color: "black" }}
+                    value={formData.message}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
-              <div className="col-md-6 mt-3">
-                <TextField
-                  id="filled-basic"
-                  label="Email"
-                  variant="filled"
-                  fullWidth
-                  sx={{ background: "white", color: "black" }}
-                />
+              <div className="row my-2">
+                <div className="col-md-12">
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    endIcon={<SendIcon />}
+                    sx={{
+                      color: "white",
+                      backgroundColor: "crimson",
+                      fontSize: "1.4rem",
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </div>
               </div>
-              <div className="col-12  mt-3">
-                <TextField
-                  id="filled-basic"
-                  label="Subject"
-                  variant="filled"
-                  fullWidth
-                  sx={{ background: "white", color: "black" }}
-                />
-              </div>
-              <div className="col-12 mt-3">
-                <TextField
-                  id="filled-basic"
-                  label="Describe Project"
-                  variant="filled"
-                  fullWidth
-                  sx={{
-                    background: "white",
-                    color: "black",
-                  }}
-                />
-              </div>
-            </div>
-            <div className="row my-2">
-              <div className="col-md-12 ">
-                <Button
-                  variant="contained"
-                  endIcon={<SendIcon />}
-                  sx={{
-                    color: "white",
-                    backgroundColor: "crimson",
-                    fontSize: "1.4rem",
-                  }}
-                >
-                  Send Message
-                </Button>
-              </div>
-            </div>
+            </form>
+            <ToastContainer />
           </div>
         </div>
         <div>
